@@ -1,0 +1,223 @@
+.jd_layout {
+    width: 100%;
+    // height: 800px;
+    // 最大宽度
+    max-width: 640px;
+    // 最小宽度
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #eee;
+    .jd_search {
+        width: 100%;
+        height: 40px;
+        z-index: 999;
+        background-color: rgba(233, 35, 34, 0);
+        // 解决PC端观看  红色区域过大问题
+        max-width: 640px;
+        position: fixed;
+        .jd_logo {
+            width: 56px;
+            height: 30px;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            background: url("../images/jd-sprites.png");
+            // 设置背景图片大小
+            background-size: 200px 200px;
+            background-position: 0 -108px;
+        }
+        .jd_login {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .jd_searchBox {
+            width: 100%;
+            height: 100%;
+            padding-left: 76px;
+            padding-right: 50px;
+            input {
+                width: 100%;
+                height: 30px;
+                margin: 5px 0;
+                border-radius: 15px;
+                padding-left: 30px;
+                color: #666666; 
+            }
+        }
+        // 使用伪元素添加放大镜效果
+        .jd_searchBox::before {
+            content: '';
+            width: 27px;
+            height: 22px;
+            position: absolute;
+            left: 80px;
+            top: 9px;
+            background: url('../images/jd-sprites.png');
+            background-size: 200px 200px;
+            background-position: -56px -108px;
+        }
+    }
+    .jd_banner {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        .jd_bannerImg {
+            width: 800%;
+            li {
+                width: 12.5%;
+                float: left;
+                img {
+                    width: 100%;
+                    /*
+                    文本基线对其方式调整，消除图片底部阴影：
+                    1.设置为块元素
+                    2.将文本字体大小设置为0
+                    3.vertical-align:bottom
+                    */
+                    display: block;
+                }
+            }    
+        }
+        .jd_bannerPoint {
+            width: 138px;
+            height: 10px;
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            transform: translateX(-50%);
+            li {
+                width: 8px;
+                height: 8px;
+                border-radius: 4px;
+                border: 1px solid #fff;
+                float: left;
+                margin-left: 8px;
+            }
+            li.active {
+                background-color: #fff;
+            }
+        }
+    }
+    .jd_nav {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #fff;
+        li {
+            width: 25%;
+            float: left;
+            text-align: center;
+            margin-top: 5px;
+            img {
+                width: 50px;
+            }
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+    .jd_product {
+        width: 100%;
+        .jd_productBox {
+            width: 100%;
+            background-color: #fff;
+            margin-top: 10px;
+            box-shadow: 1px 1px 1px #ccc;
+            .jd_pTip {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                color: #666666;
+                border-bottom: 1px solid #ccc;
+                h3 {
+                    padding-left: 30px;
+                    position: relative;
+                } 
+                h3::before {
+                    content: '';
+                    position: absolute;
+                    width: 3px;
+                    height: 12px;
+                    background-color: #e92322;
+                    top: 9px;
+                    left: -8px;
+                }
+            }
+        }
+        // 秒杀样式开始
+        .jd_sk  {
+            .jd_pTip {
+                border-bottom: none;
+                .jd_sk_icon {
+                    width: 16px;
+                    height: 20px;
+                    background: url('../images/seckill-icon.png');
+                    background-size: 16px 20px;
+                    margin-top: 3px;
+                }
+                .jd_sk_text {
+                    color: #e92322;
+                }
+                .jd_sk_time {
+                    span {
+                    width: 14px;
+                    height: 18px;
+                    line-height: 18px;
+                    text-align: center;
+                    display: inline-block;
+                    color: #fff;
+                    background-color: #000;
+                    }
+                    span:nth-child(3){
+                        color: #000;
+                        background-color: #fff;
+                    }
+                    span:nth-child(6){
+                        color: #000;
+                        background-color: #fff;
+                    }
+                }
+            }
+            .jd_pContent {
+                padding: 20px;
+                ul {
+                    width: 100%;
+                    li{
+                        width: 33.33%;
+                        float: left;
+                        text-align: center;
+                        img {
+                            width: 70%;
+                            //去除文本基线
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 产品块超链接
+    .a_w50 {
+        width: 50%;
+        display: block;
+        img {
+            width: 100%;
+            // 清除图片基线对其样式
+            display: block;
+        }
+    }
+    .b_left {
+        border-left: 1px solid #ccc;
+    }
+    .b_bottom {
+        border-bottom: 1px solid #ccc;
+    }
+    .b_right {
+        border-right: 1px solid #ccc;
+    }
+}
